@@ -2,16 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Element} from './Element';
 
+//Flow step
+//Contains maximum 3 elements
 class Step extends React.Component {
-   /* state = {
-        visible: true
-    }*/
-
-  /*  handleHideClick = (e) => {
-        e.preventDefault();
-        this.setState({visible: false});
-    }*/
-
+  
     renderStep = () => {
        const {elements} = this.props.data;
 
@@ -28,7 +22,7 @@ class Step extends React.Component {
     }
     
     render (){
-        const { title, elements } = this.props.data
+        const { title } = this.props.data
         return (
             <div className='step'>
                 <p className='step__title'>{title}</p>

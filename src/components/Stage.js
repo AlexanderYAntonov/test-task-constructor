@@ -2,11 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Step} from './Step';
 
+//Flow stage, consist of steps and elements
+//title - title of stage
 class Stage extends React.Component {
     state = {
-        visible: true
+        visible: true,
+        title: this.props.data
     }
 
+    //show or hide stage content
     handleHideClick = (e) => {
         e.preventDefault();
         const newValue = !this.state.visible;
@@ -29,7 +33,7 @@ class Stage extends React.Component {
     }
     
     render (){
-        const { title, steps } = this.props.data;
+        const { title } = this.props.data;
         let showSymbol = '+';
         if (this.state.visible) showSymbol = '-';
         return (
@@ -40,6 +44,7 @@ class Stage extends React.Component {
                 {
                     this.state.visible && this.renderStage()
                 }
+           
             </div>
         )
     }
